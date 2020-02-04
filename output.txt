@@ -1,0 +1,304 @@
+===================================================================
+Recommended Usage: ./simplecompile.sh > output.txt 2>&1
+===================================================================
+Tue Jan 28 22:33:10 PST 2020
+Linux csslab5.uwb.edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+uid=1032222(arshiaj) gid=2121032222(arshiaj) groups=2121032222(arshiaj),605559(lab-access) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+===================================================================
+*** compiling with clang++ to create an executable called myprogram
+===================================================================
+clang version 7.0.1 (tags/RELEASE_701/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rh/llvm-toolset-7.0/root/usr/bin
+===================================================================
+*** running myprogram
+Starting testPisan01
+* Testing == and !=
+Ending testPisan01
+Starting testPisan02
+* Testing == and != with more detail
+Ending testPisan02
+Starting testPisan03
+* Testing traversal
+Visual check B1:
+                x
+            g
+        f
+    c
+        a
+
+            ___________c____________            
+      _____a______            _____f______      
+   __N___      __N___      __N___      __g___   
+  N     N     N     N     N     N     N     x   
+
+Ending testPisan03
+Starting testArshiaj01
+Testing the Array constructor of tree
+Filling the tree with an array of : {10, 1, 2, 3, 9, 5, 4, 8, 6, 7}
+                10
+            9
+        8
+                7
+            6
+    5
+                4
+            3
+        2
+            1
+
+            ___________5____________            
+      _____2______            _____8______      
+   __1___      __3___      __6___      __9___   
+  N     N     N     4     N     7     N     10  
+
+Clearing the tree and printing
+
+[__]
+Ending testArshiaj01
+Starting testArshiaj02
+Removing from, getting count and height of empty tree
+printing empty tree
+
+[__]
+Ending testArshiaj02
+Starting testArshiaj03
+Testing remove
+Balancing
+            g
+        f
+            e
+    c
+            b
+        a
+
+      _____c______      
+   __a___      __f___   
+  N     b     e     g   
+
+Removing Leaf Node : g
+        f
+            e
+    c
+            b
+        a
+
+      _____c______      
+   __a___      __f___   
+  N     b     e     N   
+
+Removing a Node with one child : a
+        f
+            e
+    c
+        b
+
+      _____c______      
+   __b___      __f___   
+  N     N     e     N   
+
+Removing a Node with two children : c
+        f
+    e
+        b
+
+   __e___   
+  b     f   
+
+clearing and printing
+
+[__]
+Ending testArshiaj03
+Starting testArshiaj04
+Height of unbalanced tree of entering 20 numbers from 1 to 20 is : 20
+Height after rebalancing : 5
+                    20
+                19
+            18
+                    17
+                16
+        15
+                    14
+                13
+            12
+                11
+    10
+                    9
+                8
+            7
+                6
+        5
+                    4
+                3
+            2
+                1
+
+                        _______________________10_______________________                        
+            ___________5____________                        ___________15___________            
+      _____2______            _____7______            _____12_____            _____18_____      
+   __1___      __3___      __6___      __8___      __11__      __13__      __16__      __19__   
+  N     N     N     4     N     N     N     9     N     N     N     14    N     17    N     20  
+
+Ending testArshiaj04
+Done!
+===================================================================
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 7.0.1
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: broadwell
+19261 warnings generated.
+29660 warnings generated.
+Suppressed 29667 warnings (29660 in non-user code, 7 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+===================================================================
+*** running clang-format format formatting suggestions
+*** generating new .clang-format based on LLVM style
+*** formatting suggestions for ./bsttest.cpp
+*** formatting suggestions for ./main.cpp
+===================================================================
+*** running valgrind to detect memory leaks
+==21604==     in use at exit: 0 bytes in 0 blocks
+===================================================================
+*** compiling with clang++ to checking for memory leaks
+===================================================================
+*** running myprogram with memory checking
+Starting testPisan01
+* Testing == and !=
+Ending testPisan01
+Starting testPisan02
+* Testing == and != with more detail
+Ending testPisan02
+Starting testPisan03
+* Testing traversal
+Visual check B1:
+                x
+            g
+        f
+    c
+        a
+
+            ___________c____________            
+      _____a______            _____f______      
+   __N___      __N___      __N___      __g___   
+  N     N     N     N     N     N     N     x   
+
+Ending testPisan03
+Starting testArshiaj01
+Testing the Array constructor of tree
+Filling the tree with an array of : {10, 1, 2, 3, 9, 5, 4, 8, 6, 7}
+                10
+            9
+        8
+                7
+            6
+    5
+                4
+            3
+        2
+            1
+
+            ___________5____________            
+      _____2______            _____8______      
+   __1___      __3___      __6___      __9___   
+  N     N     N     4     N     7     N     10  
+
+Clearing the tree and printing
+
+[__]
+Ending testArshiaj01
+Starting testArshiaj02
+Removing from, getting count and height of empty tree
+printing empty tree
+
+[__]
+Ending testArshiaj02
+Starting testArshiaj03
+Testing remove
+Balancing
+            g
+        f
+            e
+    c
+            b
+        a
+
+      _____c______      
+   __a___      __f___   
+  N     b     e     g   
+
+Removing Leaf Node : g
+        f
+            e
+    c
+            b
+        a
+
+      _____c______      
+   __a___      __f___   
+  N     b     e     N   
+
+Removing a Node with one child : a
+        f
+            e
+    c
+        b
+
+      _____c______      
+   __b___      __f___   
+  N     N     e     N   
+
+Removing a Node with two children : c
+        f
+    e
+        b
+
+   __e___   
+  b     f   
+
+clearing and printing
+
+[__]
+Ending testArshiaj03
+Starting testArshiaj04
+Height of unbalanced tree of entering 20 numbers from 1 to 20 is : 20
+Height after rebalancing : 5
+                    20
+                19
+            18
+                    17
+                16
+        15
+                    14
+                13
+            12
+                11
+    10
+                    9
+                8
+            7
+                6
+        5
+                    4
+                3
+            2
+                1
+
+                        _______________________10_______________________                        
+            ___________5____________                        ___________15___________            
+      _____2______            _____7______            _____12_____            _____18_____      
+   __1___      __3___      __6___      __8___      __11__      __13__      __16__      __19__   
+  N     N     N     4     N     N     N     9     N     N     N     14    N     17    N     20  
+
+Ending testArshiaj04
+Done!
+===================================================================
+*** using --analyze option for clang++ to detect issues
+===================================================================
+*** cleaning up, deleting myprogram
+===================================================================
+Tue Jan 28 22:34:05 PST 2020
+===================================================================
+Exiting with 0
